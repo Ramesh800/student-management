@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#Subjects {background-color: green;}
+#Scores {background-color: blue;}
+#Login{background-color: orange;}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('Subjects', this, 'green')">Subjects</button>
+<button class="tablink" onclick="openPage('Scores', this, 'blue')">Scores</button>
+<button class="tablink" onclick="openPage('Login', this, 'orange')">Login</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Welcome</h3>
+  <p>Student Portal</p>
+</div>
+
+<div id="Subjects" class="tabcontent">
+  <h3>Subjects</h3>
+  <p>English</p> 
+  <p>Hindi</p>
+  <p>Telugu</p>
+  <p>Maths</p>
+  </div>
+
+<div id="Scores" class="tabcontent">
+  <h3>Marks Obtained</h3>
+  <p>ENglish : 20</p>
+  <p>ENglish : 20</p>
+  <p>ENglish : 20</p>
+  <p>ENglish : 20</p>
+</div>
+
+<div id="Login" class="tabcontent">
+
+<form action="C:\Users\91954\ramesh\home.html" name="loginForm" >
+<table align="center">
+
+<tr>
+<td colspan=2><center><font size=4><b>HTML Login Page</b></font></center></td>
+</tr>
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+</tr>
+
+<tr>
+<td ><input type="Reset"></td>
+<td><input type="Submit"  onClick="openTab('Subjects',this)"></td>
+</tr>
+
+</table>
+</form>
+  
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
